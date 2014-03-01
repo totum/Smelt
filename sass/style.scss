@@ -1,76 +1,44 @@
 /*   
-Theme Name: aleo
-Theme URI: www.factotum.dk
-Description: Responsive theme for aleo.dk
-Author: Morten Hedelykke Dietz Fuglsang
-Author URI: www.factotum.dk
+Theme Name: <Your Theme Name>
+Theme URI: -
+Description: <Your theme name>
+Author: -
+Author URI: -
 Version: 0.1a
 */
-
 
 // -------------------------------------
 //   Dev-mode variables
 // -------------------------------------
-
-@mixin susy-grid {
-	@if $dev-mode {
-		@include susy-grid-background;
-	}
-}
-
+$grid-image: hide;
 
 // -------------------------------------
-//   Compass and other gems
+//   Compass imports
 // -------------------------------------
 
+@import "compass/support";
+@import "compass/css3/box-sizing";
 @import "compass/css3";
+@import "compass/typography/vertical_rhythm";
 @import "susy";
-
-
-// -------------------------------------
-//   Core
-// -------------------------------------
-
-// ----- Reset ----- //
-
-@import "core/reset";
-
-// ----- Settings ----- //
-
-@import "core/settings";
-
-// ----- Helpers ----- //
-
-@import "core/helpers";
-
-// ----- Base ----- //
-
-@import "core/base";
-
-// ----- Content ----- //
-
-@import "core/content";
-
-// ----- Layout ----- //
-
-@import "core/layout";
+@import "breakpoint";
 
 // -------------------------------------
-//   Modules
+//   Core import
 // -------------------------------------
 
-@import "modules/button";
+@import
+	"core/normalize",
+	"core/settings",
+	"core/helpers",
+	"core/base",
+	"core/layout";
 
-@import "modules/carousel";
+// -------------------------------------
+//   Modules import
+// -------------------------------------
 
-@import "modules/grid";
-
-@import "modules/img-box";
-
-@import "modules/list";
-
-@import "modules/navigation";
-
-@import "modules/sidebar";
-
-@import "modules/temp";
+@import
+	"modules/button",
+	"modules/navigation",
+	"modules/sidebar";
