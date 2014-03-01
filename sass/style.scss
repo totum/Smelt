@@ -1,0 +1,76 @@
+/*   
+Theme Name: aleo
+Theme URI: www.factotum.dk
+Description: Responsive theme for aleo.dk
+Author: Morten Hedelykke Dietz Fuglsang
+Author URI: www.factotum.dk
+Version: 0.1a
+*/
+
+
+// -------------------------------------
+//   Dev-mode variables
+// -------------------------------------
+
+@mixin susy-grid {
+	@if $dev-mode {
+		@include susy-grid-background;
+	}
+}
+
+
+// -------------------------------------
+//   Compass and other gems
+// -------------------------------------
+
+@import "compass/css3";
+@import "susy";
+
+
+// -------------------------------------
+//   Core
+// -------------------------------------
+
+// ----- Reset ----- //
+
+@import "core/reset";
+
+// ----- Settings ----- //
+
+@import "core/settings";
+
+// ----- Helpers ----- //
+
+@import "core/helpers";
+
+// ----- Base ----- //
+
+@import "core/base";
+
+// ----- Content ----- //
+
+@import "core/content";
+
+// ----- Layout ----- //
+
+@import "core/layout";
+
+// -------------------------------------
+//   Modules
+// -------------------------------------
+
+@import "modules/button";
+
+@import "modules/carousel";
+
+@import "modules/grid";
+
+@import "modules/img-box";
+
+@import "modules/list";
+
+@import "modules/navigation";
+
+@import "modules/sidebar";
+
+@import "modules/temp";
