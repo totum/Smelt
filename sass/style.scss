@@ -30,6 +30,8 @@ $grid-image: hide;
 @import
 	"core/normalize",
 	"core/settings",
+	// Import of ores after settings are in.
+	"../ore/ore_extends",
 	"core/helpers",
 	"core/base",
 	"core/layout";
