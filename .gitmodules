@@ -1,0 +1,3 @@
+[submodule "ore"]
+	path = ore
+	url = git://github.com/totum/ore.git
