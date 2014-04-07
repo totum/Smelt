@@ -4,13 +4,16 @@ Theme URI: -
 Description: <Your theme name>
 Author: -
 Author URI: -
-Version: 0.1a
+Version: -
 */
 
+/* -------------------------------------
+//		TODO
 // -------------------------------------
-//   Dev-mode variables
-// -------------------------------------
-$grid-image: hide;
+
+#Change name of theme folder and theme information here.
+
+*/
 
 // -------------------------------------
 //   Compass imports
@@ -28,19 +31,31 @@ $grid-image: hide;
 // -------------------------------------
 
 @import
-	"core/normalize",
-	"core/settings",
+	"sass/core/normalize",
+	"sass/core/settings",
 	// Import of ores after settings are in.
-	"../ore/ore_extends",
-	"core/helpers",
-	"core/base",
-	"core/layout";
+	"ore/ore_extends",
+	"sass/core/fonts",
+	"sass/core/helpers",
+	"sass/core/base",
+	"sass/core/content",
+	"sass/core/layout";
 
 // -------------------------------------
 //   Modules import
 // -------------------------------------
 
 @import
-	"modules/button",
-	"modules/navigation",
-	"modules/sidebar";
+	"sass/modules/navigation",
+	"sass/modules/sidebar";
+
+// -------------------------------------
+//	3rd party plugins
+// -------------------------------------
+
+
+// -------------------------------------
+//	3rd party tweaks
+// -------------------------------------
+@import
+	"sass/modules/lib-tweaks";

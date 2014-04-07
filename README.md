@@ -1,8 +1,25 @@
 Smelt.
 ======
 
-Smelt is an elegant & responsive WordPress theme construction-kit, intended as solid construction-material to pour into specific project moulds..
+Smelt is Sass & Susy-based WordPress RWD-construction kit.
 
+The intention is to provide minimalist, solid and unobtrusive tools for WordPress parent-theme development, that enhance speed of development, adherance to conventions, and ease of long-term maintainability.
+
+
+Smelt is both the naked theme that is the file-structure and few included files, and Ore, a submodule which contains most of the functionality, including:
+* BEM-style SCSS %placeholders for commonly used patterns and helpers including grids and navigation; placeholders to stay DRY and because scss placeholders add no weight unless used.
+* WordPress template-partials and functions that can be included and used at well.
+
+
+How to use:
+--------
+* If you aren't already, familiarize yourself with the Sass-family and get your development environment setup.
+* Download complete directory to your local machine / or fork & clone from github
+* Change theme folder name and theme information in style.scss, and start developing!
+* Update the ore submodule for new functionality.
+
+
+NOTE: Smelt won't work with
 Smelt is an accumulation of my personal practices, and more than its practical use it also serves as my learning document and reminders to myself.
 
 

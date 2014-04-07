@@ -1,47 +1,98 @@
-// -------------------------------------
-//      Settings
-//      @font-faces, variables
-// -------------------------------------
+/***************************************
+//
+//  	Settings
+//  	#Font sizing, devmode, rhytm, font size and more
+//		#Susy and more RWD stuff
+// 		#Colors
+// 
+***************************************/
 
-// ----- Vertical rhytm variables, font sizing ----- //
-$base-font-size: 16px;
-$base-line-height: 24px;
+/* #Font sizing, vertical rhytm
+---------------------------------------- */
+
+$base-font-size: 15px;
+$base-line-height: 22px;
+$rhythm-unit: 'em';
 @include establish-baseline;
 
-$h1-font-size: 2    * $base-font-size;
-$h2-font-size: 1.5  * $base-font-size;
-$h3-font-size: 1.17 * $base-font-size;
+$h1-font-size: 1.6    * $base-font-size;
+$h2-font-size: 1.3  * $base-font-size;
+$h3-font-size: 1.1 * $base-font-size;
 $h4-font-size: 1    * $base-font-size;
 $h5-font-size: 0.83 * $base-font-size;
 $h6-font-size: 0.67 * $base-font-size;
 
 
-// ----- Susy variables ----- //
 
-$susy: (
-	columns: 12,
-	gutters: 1/4, //$gutter-width / $column-width,
-	//column-width: 4em,
-	//container: 64em,
-	math: fluid,
-	//flow: if($from-direction == right, rtl, ltr),
-	//last-flow: if($omega-float == $from-direction, from, to),
-	debug: (
-    	image: $grid-image,
-    ),
-	global-box-sizing: border-box,
+/* #Colors
+---------------------------------------- */
+$color-accent: green;
+
+
+
+/* #Susy setup
+---------------------------------------- */
+$s-grid-bg: hide; // Show/Hide - For showing the susy and rhytm background
+
+
+// ----- Breakpoints ----- //
+// ----- 	WARNING!
+// 			Don't change var names
+// 						-- //
+$l-break-medium: 600px;
+$l-break-large: 1024px;
+$l-break-xlarge: 1360px;
+
+// Map of breakpoints, used to create placeholders in ore.
+// Add any breakpoints using the same syntax.
+$breakpoints: (
+	medium : ( $l-break-medium ($l-break-large - 1) ),
+	large : $l-break-large
 );
 
-$laptop-side-element: 2.4/13 * 40em; //12em;
+// ----- Container vars ----- //
+$s-boxsizing: border-box;
+$s-columns: 12;
+$s-container-width: auto;
+$s-grid-type: fluid;
+$s-gutter-ratio: 1/4;
+$s-gutter-position: inside;
 
-/*
-span(x of y <math>)
-gutter(x <math>)
+// ----- Vars for xlarge container ----- //
+$s-column-width-xlarge: $l-break-xlarge; 
+$s-container-width-xlarge: auto; // Adjust using column width instead. Refer to Susy docs
+$s-grid-type-xlarge: static;
 
-@include container(x columns);
-@include breakpoint(y em) {max-width: container(z columns);}
 
-@include susy-breakpoint is like breakpoint but with added with-layout
-@with-layout is like with-grid-settings
-@layout sets global layout. maybe us eon body?
-*/
+// ----- Container padding ----- //
+$l-padding-small: 0.5rem;
+$l-padding-small2: 1rem;
+$l-padding-medium: 2em;
+$l-padding-large: 3em;
+$l-padding-xlarge: 0;
+
+// ----- Standard container ----- //
+$s-container: (
+	columns: $s-columns,
+	gutters: $s-gutter-ratio,
+	gutter-position: $s-gutter-position,
+	container: $s-container-width,
+	math: $s-grid-type,
+	debug: (
+    	image: $s-grid-bg,
+    ),
+	global-box-sizing: $s-boxsizing,
+);
+
+// Centered fixed width container for xlarge.
+$s-container-xlarge: (
+	columns: $s-columns,
+	column-width: $s-column-width-xlarge,
+	gutters: $s-gutter-ratio,
+	gutter-position: $s-gutter-position,
+	math: $s-grid-type-xlarge,
+	debug: (
+    	image: $s-grid-bg,
+    ),
+    global-box-sizing: $s-boxsizing,
+);

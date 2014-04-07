@@ -1,14 +1,39 @@
-// -------------------------------------
+/* -------------------------------------
 //      Base
 //      ie. h's, p, a, etc.
 //		And more modular content styles and utilities, ie. center
-// -------------------------------------
+// -----------------------------------*/
+
+html {
+    -webkit-font-smoothing: antialiased; //maxvoltar.com/archive/-webkit-font-smoothing
+    overflow-y: scroll; // force scrollbar to avoid jumping content
+}
+
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    -webkit-animation: bugfix infinite 1s; // For toggle nav
+}
+
+@-webkit-keyframes bugfix {
+    from {padding:0;} to {padding:0;} // For toggle nav
+}
 
 
+p {
+    @extend %ore-m--leader;
+    @extend %ore-m--trailer;
+}
 
+a {
+    color: $color-accent;
+    &:focus,
+    &:hover {
+        color: darken($color-accent, 20%);
+    }
+}
 
-
-// ----- Headings ----- //
+/* Headings
+---------------------------------------- */
 
 h1, .h1 {
     @include adjust-font-size-to( $h1-font-size );
