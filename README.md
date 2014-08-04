@@ -14,7 +14,9 @@ Smelt is both the naked theme that is the file-structure and few included files,
 How to use:
 --------
 * If you aren't already, familiarize yourself with the Sass-family and get your development environment setup.
-* Download complete directory to your local machine / or fork & clone from github
+* Download complete directory to your local machine / or fork & clone from github - $ git clone git://github.com/totum/smelt.git wonderful-theme-name
+* Go to the directory - $ cd wonderful-theme-name/ and remove the version history of the origin - $ rm -rf .git
+* Create a git repository from that directory: $ git init (OPTIONAL; only if you are using git. You are using version control, right?)
 * Change theme folder name and theme information in style.scss, and start developing!
 * Update the ore submodule for new functionality.
 
