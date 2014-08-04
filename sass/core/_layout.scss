@@ -1,5 +1,16 @@
-/* -------------------------------------
-//      Layout
-//      Base layout setup
-//		Margins, paddings, width on base layout stuff.
-// -----------------------------------*/
+/* Layout
+	Base layout setup
+	Margins, paddings, width on base layout stuff.
+---------------------------------------- */
+
+body {
+	// Sticky footer with flexbox
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.main-wrap {
+	// For sticky footer
+	flex: 1;
+}

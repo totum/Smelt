@@ -1,8 +1,16 @@
-/* -------------------------------------
-//      Base
-//      ie. h's, p, a, etc.
-//		And more modular content styles and utilities, ie. center
-// -----------------------------------*/
+/* Base     
+    ie. h's, p, a, etc.
+    And more modular content styles and utilities, ie. center
+---------------------------------------- */
+
+@if $debug {
+    * { background-color: rgba(255,0,0,.2); }
+    * * { background-color: rgba(0,255,0,.2); }
+    * * * { background-color: rgba(0,0,255,.2); }
+    * * * * { background-color: rgba(255,0,255,.2); }
+    * * * * * { background-color: rgba(0,255,255,.2); }
+    * * * * * * { background-color: rgba(255,255,0,.2); }
+}
 
 html {
     -webkit-font-smoothing: antialiased; //maxvoltar.com/archive/-webkit-font-smoothing
@@ -10,18 +18,23 @@ html {
 }
 
 body {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     -webkit-animation: bugfix infinite 1s; // For toggle nav
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 @-webkit-keyframes bugfix {
     from {padding:0;} to {padding:0;} // For toggle nav
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
 
 p {
-    @extend %ore-m--leader;
-    @extend %ore-m--trailer;
+    @include leader(0.5);
+    @include trailer(0.5);
 }
 
 a {
@@ -32,36 +45,59 @@ a {
     }
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Headings
 ---------------------------------------- */
 
 h1, .h1 {
-    @include adjust-font-size-to( $h1-font-size );
-    @include leader(1, $h1-font-size);
-    @include trailer(1, $h1-font-size);
+    @include adjust-font-size-to($h1-size-small);
+    @include leader(1, $h1-size-small);
+    @include trailer(1, $h1-size-small);
 }
 h2, .h2 {
-    @include adjust-font-size-to( $h2-font-size );
-    @include leader(1, $h2-font-size);
-    @include trailer(1, $h2-font-size);
+    @include adjust-font-size-to($h2-size-small);
+    @include leader(1, $h2-size-small);
+    @include trailer(1, $h2-size-small);
 }
 h3, .h3 {
-    @include adjust-font-size-to( $h3-font-size );
-    @include leader(1, $h3-font-size);
-    @include trailer(1, $h3-font-size);
+    @include adjust-font-size-to($h3-size-small);
+    @include leader(1, $h3-size-small);
+    @include trailer(1, $h3-size-small);
 }
 h4, .h4 {
-    @include adjust-font-size-to( $h4-font-size );
-    @include leader(1, $h4-font-size);
-    @include trailer(1, $h4-font-size);
+    @include adjust-font-size-to($h4-size);
+    @include leader(1, $h4-size);
+    @include trailer(1, $h4-size);
 }
 h5, .h5 {
-    @include adjust-font-size-to( $h5-font-size );
-    @include leader(1, $h5-font-size);
-    @include trailer(1, $h5-font-size);
+    @include adjust-font-size-to($h5-size);
+    @include leader(1, $h5-size);
+    @include trailer(1, $h5-size);
 }
 h6, .h6 {
-    @include adjust-font-size-to( $h6-font-size );
-    @include leader(1, $h6-font-size);
-    @include trailer(1, $h6-font-size);
+    @include adjust-font-size-to($h6-size);
+    @include leader(1, $h6-size);
+    @include trailer(1, $h6-size);
+}
+
+@include breakpoint($l-break-medium) {
+    h1, .h1 {
+        @include adjust-font-size-to($h1-size);
+        @include leader(1, $h1-size);
+        @include trailer(1, $h1-size);
+    }
+    h2, .h2 {
+        @include adjust-font-size-to( $h2-size);
+        @include leader(1, $h2-size);
+        @include trailer(1, $h2-size);
+    }
+    h3, .h3 {
+        @include adjust-font-size-to( $h3-size);
+        @include leader(1, $h3-size);
+        @include trailer(1, $h3-size);
+    }
 }

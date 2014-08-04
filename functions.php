@@ -1,36 +1,41 @@
 <?php
 
+// Include ore functions
+include (get_template_directory_uri() . '/ore/ore_functions.php');
+
 // Post thumbnails
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 320, 320, true ); // Regular thumbnail hard-cropped for gallery-style lists.
-add_image_size( 'single-post-xsmall', 200, 200 ); // X-small for mobile thumbs
-add_image_size( 'single-post-small', 480, 480 ); // Small for summaries
-add_image_size( 'single-post-medium', 640, 9999 ); // Medium-size for inserting in posts
-add_image_size( 'single-post-large', 1024, 768 ); // Large size for slimbox view
-add_image_size( 'single-post-xlarge', 1280, 1024 ); // XLarge size for smth in the future
-add_image_size( 'single-post-full', 9999, 9999 ); // Full-size image for whatever!
+set_post_thumbnail_size( 200, 200, true );
+add_image_size( 'single-post-small', 480, 480 );
+add_image_size( 'single-post-medium', 640, 9999 );
+add_image_size( 'single-post-large', 1024, 768 );
+add_image_size( 'single-post-full', 9999, 9999 );
 
-function register_my_menus() {
+// Remove bloat classes from menu. (pulled from ore)
+add_filter('nav_menu_css_class', 'discard_menu_classes', 10, 2);
+
+function register_menus() {
 	register_nav_menus(
-		array( 'site-nav' => __( 'Site Navigation' ))
+		array( 'nav-main' => __( 'Top Navigation' ))
 	);
 }
-add_action( 'init', 'register_my_menus' );
+add_action( 'init', 'register_menus' );
 
-/*function init_scripts() {
+function load_scripts() {
 	if (!is_admin()) {
-		wp_register_script('mobile-nav', get_template_directory_uri().'/js/mobile-nav.js', array('jquery'));
-		wp_enqueue_script('mobile-nav');
-        wp_register_script('ajax-posts-init', get_template_directory_uri().'/js/ajax-posts.js', array('jquery'));
-        wp_enqueue_script('ajax-posts-init');
-        wp_register_script('imagefit', get_template_directory_uri().'/js/jquery.imagefit-0.2.js', array('jquery'));
-        wp_enqueue_script('imagefit');
-        wp_register_script('colorbox', get_template_directory_uri().'/js/colorbox/jquery.colorbox-min.js', array('jquery'));
-        wp_enqueue_script('colorbox');
-        
-		// Jquery dependencies, automatically calls jquery in wp
+		// !Note: Remember to set scripts to load in footer by last parameter set to true, unless you want it loaded in wp_head.
+
+		// Deregister jquery
+		// wp_deregister_script('jquery');
+
+		// Register jQuery through jsDelivr along with other scripts to reduce http requests
+		// wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdn.jsdelivr.net/g/jquery@2.1", false, null, true);
+
+		// Theme specific scripts
+
+		// Load
 	}
 }
-add_action('init', 'init_scripts');*/
+// add_action('wp_enqueue_scripts', 'load_scripts');
 
 ?>

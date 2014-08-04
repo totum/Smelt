@@ -1,11 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    breakpoint (2.4.1)
-      compass (~> 1.0.0.alpha.13)
-      sass (~> 3.3.0.rc.2)
+    breakpoint (2.4.6)
+      sass (~> 3.3.0)
       sassy-maps (< 1.0.0)
-    chunky_png (1.3.0)
+    chunky_png (1.3.1)
     compass (1.0.0.alpha.18)
       chunky_png (~> 1.2)
       compass-core (~> 1.0.0.alpha.17)
@@ -13,10 +12,11 @@ GEM
       json
       listen (~> 1.1.0)
       sass (~> 3.3.0.rc.3)
-    compass-core (1.0.0.alpha.17)
+    compass-core (1.0.0.rc.0)
       multi_json (~> 1.0)
-      sass (>= 3.3.rc.3)
-    compass-import-once (1.0.2)
+      sass (>= 3.3.0, < 3.5)
+    compass-import-once (1.0.4)
+      sass (>= 3.2, < 3.5)
     ffi (1.9.3)
     ffi (1.9.3-x86-mingw32)
     json (1.8.1)
@@ -24,25 +24,24 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
-    multi_json (1.8.4)
+    multi_json (1.10.1)
     rb-fsevent (0.9.4)
-    rb-inotify (0.9.3)
+    rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    rb-kqueue (0.2.2)
+    rb-kqueue (0.2.3)
       ffi (>= 0.5.0)
-    sass (3.3.0.rc.3)
-    sassy-maps (0.3.1)
-      compass (~> 1.0.0.alpha.13)
-      sass (~> 3.3.0.rc.2)
-    susy (2.0.0.rc.1)
-      sass (~> 3.3.0.rc.1)
+    sass (3.3.14)
+    sassy-maps (0.4.0)
+      sass (~> 3.3)
+    susy (2.1.3)
+      sass (>= 3.3.0, < 3.5)
 
 PLATFORMS
   ruby
   x86-mingw32
 
 DEPENDENCIES
-  breakpoint
+  breakpoint (= 2.4.6)
   compass (= 1.0.0.alpha.18)
-  sass (= 3.3.0.rc.3)
-  susy (= 2.0.0.rc.1)
+  sass (= 3.3.14)
+  susy (= 2.1.3)

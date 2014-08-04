@@ -1,11 +1,14 @@
-/*   
-Theme Name: <Your Theme Name>
-Theme URI: -
-Description: <Your theme name>
-Author: -
-Author URI: -
-Version: -
+/*!   
+Theme Name: Smelt
+Theme URI: github.com/factotum/smelt
+Description: A Wordpress naked theme
+Author: totum	
+Author URI: craftdev.factotum.dk
+Version: 0.5
 */
+
+// True shows grid and backgrounds on elements.
+$debug: true;
 
 /* -------------------------------------
 //		TODO
@@ -39,7 +42,8 @@ Version: -
 	"sass/core/helpers",
 	"sass/core/base",
 	"sass/core/content",
-	"sass/core/layout";
+	"sass/core/layout",
+	"sass/core/print";
 
 // -------------------------------------
 //   Modules import

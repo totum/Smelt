@@ -1,5 +1,17 @@
-// -------------------------------------
-//      Helpers
-//      Extends, Functions, Mixins, Keyframe Animations
-// -------------------------------------
+/* Helpers
+	Extends, Functions, Mixins, Keyframe Animations
+---------------------------------------- */
 
+.clear {
+	@extend %ore-clearfix;
+}
+
+.icon {
+    @extend %ore-display-block;
+}
+.small {
+    @include adjust-font-size-to( 11px );
+}
+.x-small {
+    @include adjust-font-size-to( 9px );
+}

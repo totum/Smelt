@@ -6,6 +6,14 @@
  *    user zoom.
  */
 
+// Border-box everywhere. Included by me.
+* { 
+  @include box-sizing(border-box);
+}
+*::before, *::after {
+  @include box-sizing(border-box);
+}
+
 html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
@@ -124,16 +132,6 @@ dfn {
 }
 
 /**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari 5, and Chrome.
- */
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/**
  * Address styling not present in IE 8/9.
  */
 
@@ -197,7 +195,7 @@ svg:not(:root) {
  */
 
 figure {
-  margin: 1em 40px;
+  margin: 0;
 }
 
 /**
@@ -421,3 +419,8 @@ td,
 th {
   padding: 0;
 }
+
+// ----- Own additions -----//
+
+// enable better resizing algorhytm in ie7
+.ie7 img { -ms-interpolation-mode: bicubic; }
